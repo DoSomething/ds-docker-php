@@ -16,7 +16,9 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 RUN npm install -g bower gulp gulp-imagemin
 RUN gem install bundler
 
-RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y php7.0 mongodb-org php7.0-mongo php7.0-common php7.0-gd php7.0-mysql php7.0-curl php7.0-json php7.0-readline php7.0-cli php7.0-mbstring php7.0-mcrypt php7.0-mongodb php7.0-mysql php7.0-xml php7.0-zip
+RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+php7.0 mongodb-org php7.0-mongo php7.0-common php7.0-dev php7.0-fpm php7.0-cli \
+php7.0-bcmath php7.0-bz2 php7.0-dba php7.0-mcrypt  php7.0-gd php7.0-mysql php7.0-curl php7.0-json php7.0-readline php7.0-mbstring php7.0-mongodb php7.0-soap php7.0-xml php7.0-zip 
 
 RUN sudo curl -sS https://getcomposer.org/installer | php
 RUN sudo mv composer.phar /usr/local/bin/composer
