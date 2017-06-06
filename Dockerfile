@@ -10,7 +10,7 @@ RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
 RUN echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 RUN sudo apt-get update
 
-RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 
 RUN npm install -g bower gulp gulp-imagemin
