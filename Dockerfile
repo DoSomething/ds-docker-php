@@ -4,6 +4,8 @@ MAINTAINER Morgan Rich
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN sudo apt-get update
+
+# Install MongoDB 3.2
 RUN sudo apt-get -y install curl git libnotify-bin ruby software-properties-common build-essential
 RUN sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
@@ -15,15 +17,19 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 
 RUN npm install -g bower gulp gulp-imagemin
+# Install Bundler
 RUN gem install bundler
 
+# Install PHP 7.0
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
 php7.0 mongodb-org php7.0-mongo php7.0-common php7.0-dev php7.0-fpm php7.0-cli \
 php7.0-bcmath php7.0-bz2 php7.0-dba php7.0-mcrypt  php7.0-gd php7.0-mysql php7.0-curl php7.0-json php7.0-readline php7.0-mbstring php7.0-mongodb php7.0-soap php7.0-xml php7.0-zip 
 
+# Install Composer
 RUN sudo curl -sS https://getcomposer.org/installer | php
 RUN sudo mv composer.phar /usr/local/bin/composer
 
+# Configure MySQL
 RUN { \
     echo mysql-community-server mysql-community-server/data-dir select ''; \
     echo mysql-community-server mysql-community-server/root-pass password ''; \
