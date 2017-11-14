@@ -16,7 +16,6 @@ RUN sudo apt-get update
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 
-RUN npm install -g bower gulp gulp-imagemin
 # Install Bundler
 RUN gem install bundler
 
