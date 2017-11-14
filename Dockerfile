@@ -5,6 +5,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN sudo apt-get update
 
+# Install ChromeDriver
+RUN sudo apt-get -y install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4
+RUN sudo apt-get -y install chromium-browser
+
 # Install MongoDB 3.2
 RUN sudo apt-get -y install curl git libnotify-bin ruby software-properties-common build-essential
 RUN sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
