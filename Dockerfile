@@ -9,11 +9,11 @@ RUN sudo apt-get update
 RUN sudo apt-get -y install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4
 RUN sudo apt-get -y install chromium-browser
 
-# Install MongoDB 3.2
+# Configure MongoDB 3.6 Dependencies
 RUN sudo apt-get -y install curl git libnotify-bin ruby software-properties-common build-essential
 RUN sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
-RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-RUN echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 RUN sudo apt-get update
 
 # Install Node 8.x LTS
@@ -23,7 +23,7 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 # Install Bundler
 RUN gem install bundler
 
-# Install PHP 7.2
+# Install PHP 7.2 & MongoDB 3.6
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
 php7.2 mongodb-org php7.2-mongo php7.2-common php7.2-dev php7.2-fpm php7.2-cli \
 php7.2-bcmath php7.2-bz2 php7.2-dba php7.2-mcrypt  php7.2-gd php7.2-mysql php7.2-curl php7.2-json php7.2-readline php7.2-mbstring php7.2-mongodb php7.2-soap php7.2-xml php7.2-zip 
