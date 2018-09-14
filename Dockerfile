@@ -4,6 +4,8 @@ MAINTAINER Morgan Rich
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN sudo apt-get update
+RUN sudo apt-get install apt-transport-https
+RUN sudo apt-get update
 
 # Install ChromeDriver
 RUN sudo apt-get -y install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4
