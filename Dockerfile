@@ -28,7 +28,7 @@ RUN gem install bundler
 # Install PHP 7.2 & MongoDB 3.6
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
 php7.2 mongodb-org php7.2-mongo php7.2-common php7.2-dev php7.2-fpm php7.2-cli \
-php7.2-bcmath php7.2-bz2 php7.2-dba php7.2-mcrypt  php7.2-gd php7.2-mysql php7.2-curl php7.2-json php7.2-readline php7.2-mbstring php7.2-mongodb php7.2-soap php7.2-xml php7.2-zip 
+php7.2-bcmath php7.2-bz2 php7.2-dba php7.2-gd php7.2-mysql php7.2-curl php7.2-json php7.2-readline php7.2-mbstring php7.2-mongodb php7.2-soap php7.2-xml php7.2-zip 
 
 # Install Composer
 RUN sudo curl -sS https://getcomposer.org/installer | php
