@@ -23,10 +23,10 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 # Install Bundler
 RUN gem install bundler
 
-# Install PHP 7.0
+# Install PHP 7.2
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
-php7.0 mongodb-org php7.0-mongo php7.0-common php7.0-dev php7.0-fpm php7.0-cli \
-php7.0-bcmath php7.0-bz2 php7.0-dba php7.0-mcrypt  php7.0-gd php7.0-mysql php7.0-curl php7.0-json php7.0-readline php7.0-mbstring php7.0-mongodb php7.0-soap php7.0-xml php7.0-zip 
+php7.2 mongodb-org php7.2-mongo php7.2-common php7.2-dev php7.2-fpm php7.2-cli \
+php7.2-bcmath php7.2-bz2 php7.2-dba php7.2-mcrypt  php7.2-gd php7.2-mysql php7.2-curl php7.2-json php7.2-readline php7.2-mbstring php7.2-mongodb php7.2-soap php7.2-xml php7.2-zip 
 
 # Install Composer
 RUN sudo curl -sS https://getcomposer.org/installer | php
